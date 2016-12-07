@@ -9,7 +9,7 @@ RUN INSTALL_PKGS="wget bc gettext lsof rsync tar which" && \
     yum install -y $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y && \
-    curl -k -s -o /tmp/prometheus.tar.gz ${PROMETHEUS_URL} && \
+    curl -k -sL -o /tmp/prometheus.tar.gz ${PROMETHEUS_URL} && \
     tar xfz /tmp/prometheus.tar.gz -C /opt && \
     mv /opt/prometheus-${PROMETHEUS_VERISON}* /opt/prometheus && \
     chmod +x /opt/prometheus/prometheus /opt/prometheus/promtool && \
